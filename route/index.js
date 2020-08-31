@@ -16,7 +16,8 @@ router.route('/api/todo/user')
 
 router.route('/api/todo/todo')
 .get(todoController.get)
-.post(todoController.post);
+.post(todoController.post)
+.patch(todoController.update);
 
 router.get('/api/todo/user-todo', userController.getTodoByUser);
 

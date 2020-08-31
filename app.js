@@ -9,7 +9,7 @@ const port = process.env.port || 3000;
 
 app.listen( port , () => {
     try {
-        console.log(`Running on port ${port}`);
+        console.log(`Running on port ${port} 🚀`);
     } catch (error) {
         throw error;
     }

@@ -28,5 +28,25 @@ module.exports = {
         }).catch((err) => {
             res.send(err);
         });
+    },
+
+    update(req, res) {
+        const todoId = req.query.id;
+        const title = req.body.title;
+        const content = req.body.content;
+
+        Todos.update({
+            title : title,
+            content : content
+        }, {
+            where : {
+                id : todoId
+            }
+        })
+        .then((result) => {
+            res.json({ status_code : 200, message : "Success update todo", results : result });
+        }).catch((err) => {
+            res.send(err);
+        });
     }
 }

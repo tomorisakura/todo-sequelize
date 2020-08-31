@@ -71,9 +71,11 @@ module.exports = {
     },
 
     getTodoByUser(req, res) {
+        const id = req.query.id;
+
         User.findAll({
             where : {
-                id : 1
+                id : id
             },
             include : ['todos']
         })
